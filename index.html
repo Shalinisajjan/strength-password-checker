@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A private, educational password strength estimate that runs locally in your browser.">
+  <title>Keystone — Password strength checker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><a class="brand" href="#main" aria-label="Keystone home"><span class="brand-icon">K</span> keystone<span class="brand-dot">.</span></a><span class="local"><i></i> PRIVATE BY DESIGN</span></header>
+  <main id="main">
+    <section class="intro"><p class="eyebrow">A small step toward safer accounts</p><h1>Make your next<br><em>password stronger.</em></h1><p class="lede">A thoughtful, on-device estimate to help you make better choices. Your password stays in this browser.</p></section>
+    <section class="checker" aria-labelledby="check-title">
+      <div class="card-head"><div><p class="eyebrow">PASSWORD CHECK</p><h2 id="check-title">Try a password</h2></div><span class="lock" aria-hidden="true">⌑</span></div>
+      <label for="password">Your password</label>
+      <div class="input-wrap"><input id="password" type="password" autocomplete="new-password" spellcheck="false" autocapitalize="off" aria-describedby="privacy-note"><button id="toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button></div>
+      <div class="actions"><span id="privacy-note">Evaluated locally. Never saved or sent.</span><button id="clear" type="button" class="clear">Clear</button></div>
+      <div class="result" aria-live="polite" aria-atomic="true">
+        <div class="rating-line"><span id="rating" class="rating">Waiting for input</span><span id="length" class="length"></span></div>
+        <div class="meter" role="meter" aria-label="Estimated password strength" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><span id="meter-fill"></span></div>
+        <h3 id="summary">Start typing to see an estimate.</h3><ul id="details"><li>Use a longer, unique passphrase for better protection.</li></ul>
+      </div>
+      <p class="disclaimer">This is an educational estimate, not an audit or a guarantee of safety.</p>
+    </section>
+    <section class="principles"><div><span class="number">01</span><h3>Length leads</h3><p>Long, memorable passphrases usually help more than adding a symbol to a short word.</p></div><div><span class="number">02</span><h3>Patterns count</h3><p>Repeats, sequences, common choices, and predictable substitutions lower the estimate.</p></div><div><span class="number">03</span><h3>Keep it unique</h3><p>Never reuse a password. A password manager can create and remember unique credentials.</p></div></section>
+    <footer><span>KEYSTONE · EDUCATIONAL TOOL</span><span>No network requests · No password storage</span></footer>
+  </main>
+  <script src="evaluator.js"></script><script src="app.js"></script>
+</body></html>
